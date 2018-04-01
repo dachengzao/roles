@@ -1,6 +1,10 @@
 ## Roles
 基于qor修改，不可用于生产环境。
 
+## install
+
+	go get github.com/dachengzao/roles
+
 ## Usage
 
 ### Permission Modes
