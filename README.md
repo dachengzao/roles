@@ -1,5 +1,5 @@
 ## Roles
-基于qor修改，不可用于生产环境。
+基于qor修改，不可用于生产环境，信不信由你！
 
 ## install
 
@@ -9,7 +9,7 @@
 
 ### Permission Modes
 
-Permission modes are really the roles in Roles. Roles has 5 default permission modes:
+Permission modes are really the *roles* in [Roles](https://github.com/qor/roles). [Roles](https://github.com/qor/roles) has [5 default permission modes](https://github.com/qor/roles/blob/master/permission.go#L8-L12):
 
 - roles.Read
 - roles.Update
@@ -17,7 +17,7 @@ Permission modes are really the roles in Roles. Roles has 5 default permission m
 - roles.Delete
 - roles.CRUD   // CRUD means Read, Update, Create, Delete
 
-You can use those permission modes, or create your own by defining permissions.
+You can use those permission modes, or create your own by [defining permissions](#define-permission).
 
 ### Permission Behaviors and Interactions
 
@@ -135,10 +135,10 @@ func main() {
 
 ### Register Roles
 
-When checking permissions, you will need to know current user's roles first. This could quickly get out of hand if you have defined many roles based on lots of conditions - so Roles provides some helper methods to make it easier:
+When checking permissions, you will need to know current user's *roles* first. This could quickly get out of hand if you have defined many *roles* based on lots of conditions - so [Roles](https://github.com/qor/roles) provides some helper methods to make it easier:
 
 ```go
-import "github.com/dachengzao/roles"
+import "github.com/qor/roles"
 
 func main() {
   // Register roles based on some conditions
