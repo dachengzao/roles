@@ -5,11 +5,10 @@ import (
 	"fmt"
 )
 
-// 定义权限模型
+// 定义权限模型，基于角色（Role）的访问控制方法的权限
 // PermissionMode permission mode
 type PermissionMode string
 
-// 定义5种授权类型
 const (
 	// Create predefined permission mode, create permission
 	Create PermissionMode = "create"
