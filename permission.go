@@ -9,6 +9,7 @@ import (
 // PermissionMode permission mode
 type PermissionMode string
 
+// 定义5种授权类型
 const (
 	// Create predefined permission mode, create permission
 	Create PermissionMode = "create"
