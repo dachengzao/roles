@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+// 定义权限模型
 // PermissionMode permission mode
 type PermissionMode string
 
@@ -24,6 +25,7 @@ const (
 // ErrPermissionDenied no permission error
 var ErrPermissionDenied = errors.New("permission denied")
 
+// 定义权限数据，包含角色、允许的角色、拒绝的角色
 // Permission a struct contains permission definitions
 type Permission struct {
 	Role         *Role
@@ -46,6 +48,7 @@ func includeRoles(roles []string, values []string) bool {
 	return false
 }
 
+// 合并权限
 // Concat concat two permissions into a new one
 func (permission *Permission) Concat(newPermission *Permission) *Permission {
 	var result = Permission{
@@ -73,6 +76,7 @@ func (permission *Permission) Concat(newPermission *Permission) *Permission {
 	return &result
 }
 
+// 允许权限模式
 // Allow allows permission mode for roles
 func (permission *Permission) Allow(mode PermissionMode, roles ...string) *Permission {
 	if mode == CRUD {
@@ -86,6 +90,7 @@ func (permission *Permission) Allow(mode PermissionMode, roles ...string) *Permi
 	return permission
 }
 
+// 拒绝权限模式
 // Deny deny permission mode for roles
 func (permission *Permission) Deny(mode PermissionMode, roles ...string) *Permission {
 	if mode == CRUD {
@@ -99,6 +104,7 @@ func (permission *Permission) Deny(mode PermissionMode, roles ...string) *Permis
 	return permission
 }
 
+// 检查角色是否有权限
 // HasPermission check roles has permission for mode or not
 func (permission Permission) HasPermission(mode PermissionMode, roles ...interface{}) bool {
 	var roleNames []string
